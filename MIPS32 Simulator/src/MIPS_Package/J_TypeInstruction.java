@@ -12,6 +12,17 @@ public class J_TypeInstruction extends MIPSInstruction
 		Instruction.put("OPCode", "");
 		Instruction.put("addr", "");
 	}
+	public J_TypeInstruction(String OpCode , String addr)
+	{
+		// TODO Auto-generated constructor stub
+		Instruction.put("OPCode", OpCode);
+		Instruction.put("addr", addr);
+	}
+	
+	@Override
+	public void print() {
+		System.out.println(getOP() +getaddr());
+	}
 	
 	public String getOP()
 	{
@@ -22,15 +33,4 @@ public class J_TypeInstruction extends MIPSInstruction
 	{
 		return Instruction.get("addr");
 	}
-	
-	public void setOP(String in)
-	{
-		Instruction.put("OPCode", in);
-	}
-	
-	public void setaddr(String in)
-	{
-		Instruction.put("addr", in);
-	}
-	
 }

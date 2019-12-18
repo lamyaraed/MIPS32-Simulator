@@ -15,7 +15,15 @@ public class I_TypeInstruction extends MIPSInstruction
 		Instruction.put("imm", "");
 	}
 	
-
+	public I_TypeInstruction(String OPCode , String rs ,String rt ,String imm)
+	{
+		// TODO Auto-generated constructor stub
+		Instruction.put("OPCode", OPCode);
+		Instruction.put("rs", rs);
+		Instruction.put("rt", rt);
+		Instruction.put("imm", imm);
+	}
+	
 	public String getOP()
 	{
 		return Instruction.get("OPCode");
@@ -33,26 +41,9 @@ public class I_TypeInstruction extends MIPSInstruction
 	{
 		return Instruction.get("imm");
 	}
-	
+	@Override
+	public void print() {
+		System.out.println(getOP() + getrs() + getrt() + getimm());
+	}
 
-	public void setOP(String in)
-	{
-		Instruction.put("OPCode", in);
-	}
-	
-	public void setrs(String rs)
-	{
-		Instruction.put("rs", rs);
-	}
-	
-	public void setrt(String in)
-	{
-		Instruction.put("rt", in);
-	}
-	
-	public void setimm(String in)
-	{
-		Instruction.put("imm", in);
-	}
-	
 }

@@ -27,7 +27,6 @@ public class CurrentInstructionInfo extends JScrollPane
         table.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
 		
         setViewportView(table);
-        
 	}
 	
 	private void createTable(String Type)

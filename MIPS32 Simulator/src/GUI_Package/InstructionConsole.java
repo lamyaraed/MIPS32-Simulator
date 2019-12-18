@@ -1,8 +1,12 @@
 package GUI_Package;
 
 import java.awt.Panel;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
@@ -14,7 +18,7 @@ import java.awt.Font;
 
 public class InstructionConsole extends JScrollPane  
 {
-	JTextArea console = new JTextArea("Hello");
+	JTextArea console = new JTextArea("");
 	
 	public InstructionConsole() {
 		console.setFont(new Font("Courier New", Font.BOLD, 13));
@@ -26,7 +30,7 @@ public class InstructionConsole extends JScrollPane
 	{
 		String txt = console.getText();
 		String FileName = "inst.txt";
-		System.out.println(txt);
+		System.out.println("Instructions From File : \n" + txt); 
 		
 		WriteOnFile(FileName , txt);
 		
@@ -51,5 +55,36 @@ public class InstructionConsole extends JScrollPane
 			System.out.println(e.getMessage());
 		}
     }
-
+	
+	public void imposrtInstructions(String path)
+	{
+		BufferedReader br;
+		String Lines = "";
+			
+		try {
+			// print the file name
+			if(new File(path).isFile()) {
+				
+				// print the content
+				br = new BufferedReader(new FileReader(path));
+				 String line;
+				 while ((line = br.readLine()) != null) {
+					 Lines+= line + '\n';
+				}
+			}
+			else
+			{
+				throw new FileNotFoundException();
+			}
+		} catch (FileNotFoundException e ) {
+			// TODO Auto-generated catch block
+			System.out.println("File Not Found");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		
+		console.setText(Lines);
+		setViewportView(console);
+	}
 }

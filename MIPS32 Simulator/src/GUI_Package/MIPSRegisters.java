@@ -73,7 +73,7 @@ public class MIPSRegisters extends JScrollPane
 		for(int i = 0 ; i < reg.size() ;i++)
 		{
 			Registers[i][0] = new String (reg.get(i));
-			Registers[i][1] = new String ("0000");
+			Registers[i][1] = new String ("0x00000000");
 		}
 	}
 	
@@ -106,6 +106,21 @@ public class MIPSRegisters extends JScrollPane
 			}
 		}
 		return -1;
+	}
+	
+	public void setRegisters(String Registers[][])
+	{
+		this.Registers = Registers;
+	}
+	
+	public String[][] getRegisters()
+	{
+		return Registers;
+	}
+	
+	public void refreshRegisters()
+	{
+		setViewportView(table);
 	}
 	
 }

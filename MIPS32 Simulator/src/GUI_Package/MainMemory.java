@@ -33,11 +33,26 @@ public class MainMemory extends JScrollPane
 		for(int i = 0 ; i < 2000 ; i++)
 		{
 			int val = start+step;
-			System.out.println(val);
+			//System.out.println(val);
 			String oct = Integer.toHexString(val);
 			memory[i][0] = "0x0000"+oct;
-			memory[i][1] = "0000";
+			memory[i][1] = "0x00000000";
 			step+=4;
 		}
+	}
+	
+	public void setMemory(String memory[][])
+	{
+		this.memory = memory;
+	}
+	
+	public String[][] getMemory()
+	{
+		return memory;
+	}
+	
+	public void refreshMemory()
+	{
+		setViewportView(table);
 	}
 }

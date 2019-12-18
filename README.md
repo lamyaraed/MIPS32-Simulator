@@ -29,13 +29,13 @@ to run any MIPS-32 instruction you need to follow these steps follow the steps d
 
 ## Authors
 
-* **Nada Nasser** -  [PurpleBooth](https://github.com/Nada-Nasser)
+* **Nada Nasser** -  [Nada-Nasser](https://github.com/Nada-Nasser)
 
-* **Farah Afifi** - 
+* **Farah Afifi** -  [farah-afifi] (https://github.com/farah-afifi)
 
-* **Lamya Raed**  - 
+* **Lamya Raed**  -  [lamyaraed] (https://github.com/lamyaraed)
 
-* **Yousef Ahmed** - 
+* **Yousef Ahmed** - [yousefahmed98] (https://github.com/yousefahmed98)
 
 
 

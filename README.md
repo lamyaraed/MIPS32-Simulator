@@ -31,11 +31,11 @@ to run any MIPS-32 instruction you need to follow these steps follow the steps d
 
 * **Nada Nasser** -  [Nada-Nasser](https://github.com/Nada-Nasser)
 
-* **Farah Afifi** -  [farah-afifi] (https://github.com/farah-afifi)
+* **Farah Afifi** -  [farah-afifi](https://github.com/farah-afifi)
 
-* **Lamya Raed**  -  [lamyaraed] (https://github.com/lamyaraed)
+* **Lamya Raed**  -  [lamyaraed](https://github.com/lamyaraed)
 
-* **Yousef Ahmed** - [yousefahmed98] (https://github.com/yousefahmed98)
+* **Yousef Ahmed** - [yousefahmed98](https://github.com/yousefahmed98)
 
 
 

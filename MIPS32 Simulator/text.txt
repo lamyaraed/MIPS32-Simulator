@@ -1,5 +1,5 @@
 start:
-addi s0 $0 5
+addi $s0 $0 5
 addi $s1 $0 0
 loop:
 beq $s1 $s0 end

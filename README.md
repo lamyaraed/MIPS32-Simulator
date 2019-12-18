@@ -1,7 +1,7 @@
 # MIPS32 Simulator
 
 MIPS simulator that consists of assembler and virtual machine.
-- The assembler is responsible for findif an instruction is valid or not, (2) what each instruction is and (3) the labels that accompany some instructions.
+- The assembler is responsible for (1) find if an instruction is valid or not, (2) what each instruction is and (3) the labels that accompany some instructions.
 that is implemented using ad-hoc parsing using Java regular expressions.
 - The virtual machine simulates the structure of MIPS-32 processor and can run the machine language program produced by the assembler. 
 

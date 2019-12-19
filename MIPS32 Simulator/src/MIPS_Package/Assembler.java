@@ -57,7 +57,7 @@ public class Assembler
 		    	String[] parsed = st.split("[\\s,]+");//splitting each instruction into their main components
 		    	
 		    	if(parsed.length == 4) {
-		    		if(parsed[0].matches("add?|sub?|and?|or?|slt?") &&
+		    		if(parsed[0].matches("add|sub|and|or|slt") &&
 		    			parsed[1].matches("\\$((s[0-7])|0|v[01]|a[0-3]|t[0-9]|ra)") &&
 		    			parsed[2].matches("\\$((s[0-7])|0|v[01]|a[0-3]|t[0-9]|ra)") &&
 		    			parsed[3].matches("\\$((s[0-7])|0|v[01]|a[0-3]|t[0-9]|ra)")	
@@ -73,7 +73,7 @@ public class Assembler
 		    			mipsInstructions.add(mipsInstr);
 		    			
 		    		}
-		    		else if(parsed[0].matches("sll?|addi?|andi?|ori?|slti?|beq?|bne?") &&
+		    		else if(parsed[0].matches("sll|addi|andi|ori|slti|beq|bne") &&
 		    			parsed[1].matches("\\$((s[0-7])|0|v[01]|a[0-3]|t[0-9]|ra)") &&
 		    			parsed[2].matches("\\$((s[0-7])|0|v[01]|a[0-3]|t[0-9]|ra)") &&
 		    			parsed[3].matches("\\w+|[0-9]+")) {
@@ -91,7 +91,7 @@ public class Assembler
 			    				mipsInstructions.add(mipsInstr);
 			    				
 			    			}
-			    			else if(parsed[0].matches("beq?|bne?" )&& parsed[3].matches("[0-9]+")) {//ITYPE
+			    			else if(parsed[0].matches("beq|bne" )&& parsed[3].matches("[0-9]+")) {//ITYPE
 			    				I_TypeInstruction mipsInstr  = new I_TypeInstruction(map.get(parsed[0]), 
 			    						String.format("%5s", map.get(parsed[1])).replace(' ', '0'),
 			    						String.format("%5s", map.get(parsed[2])).replace(' ','0'),
@@ -102,7 +102,7 @@ public class Assembler
 					    		mipsInstructions.add(mipsInstr);
 
 			    			}
-			    			else if(parsed[0].matches("addi?|andi?|ori?|slti?" )&& parsed[3].matches("[0-9]+")) {//ITYPE
+			    			else if(parsed[0].matches("addi|andi|ori|slti" )&& parsed[3].matches("[0-9]+")) {//ITYPE
 			    				I_TypeInstruction mipsInstr  = new I_TypeInstruction(map.get(parsed[0]), 
 			    						String.format("%5s", map.get(parsed[2])).replace(' ', '0'),
 			    						String.format("%5s", map.get(parsed[1])).replace(' ','0'),
@@ -112,7 +112,7 @@ public class Assembler
 			    				mipsInstr.setType("I-Type");
 				    			mipsInstructions.add(mipsInstr);	
 			    			}
-			    			else if(parsed[0].matches("beq?|bne?" )&& parsed[3].matches("\\w+")) {
+			    			else if(parsed[0].matches("beq|bne" )&& parsed[3].matches("\\w+")) {
 			    				if(map.get(parsed[3])!=null) {	
 			    					I_TypeInstruction mipsInstr  =new I_TypeInstruction(map.get(parsed[0]), 
 				    						String.format("%5s", map.get(parsed[1])).replace(' ', '0'),
@@ -140,7 +140,7 @@ public class Assembler
 		    	}
 		    	else if(parsed.length == 3) {
 		    		
-					if(parsed[0].matches("lui?|lw?|sw?") &&
+					if(parsed[0].matches("lui|lw|sw") &&
 			    		parsed[1].matches("\\$((s[0-7])|0|v[01]|a[0-3]|t[0-9]|ra)") &&
 			    		parsed[2].matches("([0-9]+)?|[0-9]*\\(\\$(s[0-7]|0|v[01]|a[0-3]|t[0-9]|ra)\\)")) {
 
@@ -153,7 +153,7 @@ public class Assembler
 							mipsInstr.setType("I-Type");
 							mipsInstructions.add(mipsInstr);
 						}
-						else if(parsed[0].matches("lw?|sw?")) {
+						else if(parsed[0].matches("lw|sw")) {
 							String []parse = parsed[2].split("[\\(||\\)]");
 							if(parse[0].equals(""))parse[0] = "0";
 							

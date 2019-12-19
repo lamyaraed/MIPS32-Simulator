@@ -8,7 +8,6 @@ public class Label extends MIPSInstruction
 	
 	public Label()
 	{
-		// TODO Auto-generated constructor stub
 		Instruction.put("label", "");
 	}
 	
